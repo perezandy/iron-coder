@@ -21,6 +21,15 @@ pub const ICON_DIR: &'static str = "assets/icons/pack/white/";
 pub const SMALL_ICON_SIZE: Vec2 = Vec2::new(8.0, 8.0);
 pub const DEFAULT_ICON_SIZE: Vec2 = Vec2::new(12.0, 12.0);
 
+
+
+#[wasm_bindgen] //TODO: implement this using local binary-stored data.
+pub fn load_icons() -> HashMap<&'static str, RetainedImage> {
+
+}
+
+
+
 // This function returns a mapping of icon names to RetainedImages 
 pub fn load_icons(icon_path: &Path) -> HashMap<&'static str, RetainedImage> {
 

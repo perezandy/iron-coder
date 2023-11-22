@@ -126,6 +126,17 @@ impl Hash for Board {
 /// information about them.
 impl Board {
 
+
+
+    #[wasm_bindgen] //TODO: Implement
+    fn load_from_toml(path: &Path) -> std::io::Result<Self> {
+        // Anything relating to a file will have to utilize the include_bytes! macro.
+        // It is very likely that any structs with paths to images as member variables
+        // will have to be replaced with constant data, which is then assigned at compile time.
+        // Functions like this will then instead
+    }
+
+
     /// Loads a board from its toml description
     fn load_from_toml(path: &Path) -> std::io::Result<Self> {
         

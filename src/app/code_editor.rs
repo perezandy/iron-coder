@@ -55,6 +55,24 @@ impl Default for CodeFile {
 }
 
 impl CodeFile {
+
+
+    // These implementations will be slightly more challenging. We can't use include_bytes!()
+    // since that doesnt work on runtime file creation. Instead, LocalStorage seems like the best bet
+    // Local Storage utilizes a key value pair and saves it to the local browser.
+    #[wasm_bindgen]
+    fn load_from_file(key: &str) -> Option<String>{
+
+    }
+
+
+
+    #[wasm_bindgen]
+    fn save(key: &str, data: &str) -> Option<String>{
+
+    }
+
+
     // Load some code from a path
     fn load_from_file(&mut self, file_path: &Path) -> std::io::Result<()> {
         let CodeFile { code, .. } = self;

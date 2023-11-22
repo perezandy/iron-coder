@@ -13,6 +13,7 @@ eframe = { version = "0.22.0", default-features = false, features = [
     "glow",          # Use the glow rendering backend. Alternative: "wgpu".
     "persistence",   # Enable restoring app state when restarting the app.
 ] }
+wasm-bindgen = "0.2"
 tracing = "0.1.37"
 tracing-subscriber = "0.3"
 log = "0.4.19"
@@ -36,3 +37,7 @@ slotmap = "1.0.6"
 clap = { version = "4.3.19", features = ["derive"] }
 usvg = "0.35.0"
 cargo-generate = "0.18.4"
+clang = "2.0.0"
+
+[lib]
+crate-type = ["cdylib"]

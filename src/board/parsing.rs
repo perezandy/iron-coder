@@ -114,12 +114,24 @@ impl<'ast> Visit<'ast> for BspParseInfo {
 /// Board impls regarding parsing of BSP syntax
 impl Board {
 
+    #[wasm_bindgen] //TODO: Implement
+    fn parse_bsp(&self) -> Option<syn::File>{
+        // To include files in wasm, you have to do this, but this won't work since
+        // all paths need to be known at compile time. Likely will need to go back 
+        // and change the board implementations.
+        const svg_string: &'static [u8] = include_bytes!(path)
+
+
+    }
+
     // Attempt to parse the BSP lib file.
     fn parse_bsp(&self) -> Option<syn::File> {
         let mut syntax = None;
         if let Some(bsp_dir) = self.bsp_path.clone() {
             let src = bsp_dir.join("src/lib.rs");
+            
             let src = fs::read_to_string(src.as_path()).unwrap();
+
             syntax = match syn::parse_file(src.as_str()) {
                 Ok(syntax) => {
                     Some(syntax)

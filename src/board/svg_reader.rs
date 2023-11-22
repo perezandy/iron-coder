@@ -41,6 +41,10 @@ pub struct SvgBoardInfo {
 
 impl SvgBoardInfo {
 
+
+    // We could make a wasm build target version of this function, but most likely we can just 
+    // prerender and include the .png files.
+
     /// Parse an Iron Coder SVG Board image from the filesystem.
     pub fn from_path(path: &Path) -> Result<SvgBoardInfo, Error> {
 

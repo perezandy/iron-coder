@@ -73,10 +73,28 @@ pub struct IronCoderApp {
 }
 
 impl Default for IronCoderApp {
+
+    #[wasm_bindgen] //TODO: Locally store the board files
+    fn default() -> Self {
+        
+        // Might be difficult to find a way to store the entire directory,
+        // so it'll be important to find the necessary components and load them in
+        // with include_bytes!()
+
+        
+
+    }
+
     fn default() -> Self {
         // Populate the boards
-        let boards_dir = Path::new("./iron-coder-boards");
+
+
+        let boards_dir = Path::new("./iron-coder-boards"); 
         let boards: Vec<board::Board> = board::get_boards(boards_dir);
+
+        
+
+
         Self {
             project: Project::default(),
             display_about: false,
